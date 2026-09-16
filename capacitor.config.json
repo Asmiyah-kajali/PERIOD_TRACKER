@@ -3,6 +3,7 @@
   "appName": "Rythora",
   "webDir": "www",
   "server": {
+    "url": "https://rythora.onrender.com",
     "androidScheme": "https"
   }
 }
