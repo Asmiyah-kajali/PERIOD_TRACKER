@@ -1,0 +1,24 @@
+{
+  "name": "rythora",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "mobile:build": "node scripts/build-mobile.js",
+    "mobile:sync": "npm run mobile:build && npx cap sync",
+    "mobile:android": "npm run mobile:sync && npx cap open android",
+    "mobile:ios": "npm run mobile:sync && npx cap open ios"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/cli": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.8.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "openai": "^6.22.0"
+  }
+}

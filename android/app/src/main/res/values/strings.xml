@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rythora</string>
+    <string name="title_activity_main">Rythora</string>
+    <string name="package_name">com.rythora.app</string>
+    <string name="custom_url_scheme">com.rythora.app</string>
+</resources>

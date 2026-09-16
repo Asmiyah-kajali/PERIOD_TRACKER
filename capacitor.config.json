@@ -1,0 +1,8 @@
+{
+  "appId": "com.rythora.app",
+  "appName": "Rythora",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fff8f4" />
+  <meta name="description" content="Rythora is a beautifully personal period and cycle tracker." />
+  <title>Rythora | Your rhythm, understood</title>
+  <link rel="icon" type="image/svg+xml" href="rythora-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#today" aria-label="Rythora home">
+        <img class="brand-logo" src="rythora-logo.svg" alt="" /><span class="brand-name">Rythora</span>
+      </a>
+
+      <nav class="nav-links">
+        <a class="nav-link active" href="#today"><span class="nav-icon">◒</span><span>Today</span></a>
+        <a class="nav-link" href="#calendar"><span class="nav-icon">▦</span><span>Calendar</span></a>
+        <a class="nav-link" href="#insights"><span class="nav-icon">⌁</span><span>Insights</span></a>
+        <button class="nav-link chat-nav-link" id="open-chat-nav" type="button"><span class="nav-icon">✦</span><span>Period support</span></button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="moon-note"><span class="moon-symbol">☾</span><div><strong>Soft reminder</strong><p>Be kind to your body today.</p></div></div>
+        <button class="profile-button" type="button" id="open-settings"><span class="avatar">AS</span><span class="profile-copy"><strong>Alex's space</strong><small>Personal tracker</small></span><span class="more-icon">···</span></button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="today">
+      <header class="topbar">
+        <div class="mobile-brand"><img class="brand-logo" src="rythora-logo.svg" alt="" /><span class="brand-name">Rythora</span></div>
+        <div class="breadcrumb"><span>Wednesday, June 12</span><span class="breadcrumb-dot"></span><span class="status-text">Cycle day 18</span></div>
+        <button class="icon-button" type="button" id="open-settings-top" aria-label="Open settings" title="Open settings">⚙</button>
+      </header>
+
+      <section class="welcome-row reveal">
+        <div>
+          <p class="eyebrow">YOUR GENTLE CHECK-IN</p>
+          <h1>Good morning, Alex <span class="sparkle">✦</span></h1>
+          <p class="intro-copy">Your cycle is already being tracked. Come back when you want to update your period, symptoms, or notes. Nothing needs to be entered every day.</p>
+        </div>
+        <div class="date-pill"><span class="tiny-sun">☼</span><span><strong>June 2024</strong><small>Wednesday, 12th</small></span></div>
+      </section>
+
+      <section class="period-chat" id="period-chat" aria-label="Period support chat">
+        <button class="chat-launcher" id="chat-launcher" type="button" aria-expanded="true" aria-controls="chat-panel"><span aria-hidden="true">✦</span> Ask Rythora</button>
+        <div class="chat-panel" id="chat-panel">
+          <div class="chat-header"><div><p class="eyebrow">PERIOD SUPPORT</p><h2>Ask Rythora</h2></div><div class="chat-actions"><button class="chat-new" id="chat-new" type="button">New chat</button><button class="chat-close" id="chat-close" type="button" aria-label="Close period support chat">×</button></div></div>
+          <p class="chat-disclaimer">General period education, not medical diagnosis. For emergencies, contact local emergency services.</p>
+          <div class="chat-messages" id="chat-messages" role="log" aria-live="polite"></div>
+          <div class="chat-prompts" id="chat-prompts"><button type="button">Why is my period late?</button><button type="button">How can I ease cramps?</button><button type="button">When is bleeding too heavy?</button></div>
+          <form class="chat-form" id="chat-form"><label class="sr-only" for="chat-input">Ask a period question</label><textarea id="chat-input" rows="1" maxlength="1000" autocomplete="off" placeholder="Message Rythora…"></textarea><div class="chat-composer-actions"><span id="chat-counter" aria-live="polite">0 / 1000</span><button type="submit" aria-label="Send message">↑</button></div></form>
+        </div>
+      </section>
+
+      <section class="hero-grid" aria-label="Cycle overview">
+        <article class="card cycle-card reveal delay-one">
+          <div class="card-heading"><div><p class="eyebrow">YOUR CYCLE</p><h2>Steady &amp; in flow</h2></div><button class="dots-button" type="button" aria-label="Cycle options">···</button></div>
+          <div class="cycle-visual">
+            <div class="orbit orbit-outer"></div><div class="orbit orbit-inner"></div><div class="cycle-orbit-dot"></div>
+            <div class="cycle-center"><span class="cycle-day-label">DAY</span><strong id="cycle-day-number">18</strong><span class="cycle-phase" id="cycle-phase">Follicular phase</span></div>
+          </div>
+          <div class="cycle-stats"><div><span class="stat-dot pink"></span><span>Period status</span><strong id="period-countdown">10 days</strong></div><div><span class="stat-dot yellow"></span><span>Cycle length</span><strong id="cycle-length">28 days</strong></div></div><p class="cycle-alert" id="cycle-alert" aria-live="polite"></p>
+          <button class="text-button" type="button" id="open-log">View cycle details <span>↗</span></button>
+        </article>
+
+        <article class="card mood-card reveal delay-two">
+          <div class="card-heading"><div><p class="eyebrow">HOW ARE YOU FEELING?</p><h2>Make a note</h2></div><span class="small-date">Today</span></div>
+          <p class="question-copy">Your body is always giving you little signals. How do you feel right now?</p>
+          <div class="mood-options" role="group" aria-label="Choose your mood">
+            <button class="mood-option" type="button" data-mood="Low" aria-label="Low mood"><span>☁</span><small>Low</small></button>
+            <button class="mood-option" type="button" data-mood="Okay" aria-label="Okay mood"><span>◐</span><small>Okay</small></button>
+            <button class="mood-option selected" type="button" data-mood="Good" aria-label="Good mood"><span>☀</span><small>Good</small></button>
+            <button class="mood-option" type="button" data-mood="Great" aria-label="Great mood"><span>✦</span><small>Great</small></button>
+          </div>
+          <div class="note-box"><span>✎</span><input id="daily-note" type="text" maxlength="80" placeholder="Add a private note..." aria-label="Add a private note" /></div>
+          <button class="save-note" id="save-note" type="button">Save today's check-in <span>→</span></button>
+        </article>
+      </section>
+
+      <section class="section-heading reveal"><div><p class="eyebrow">YOUR MONTH AT A GLANCE</p><h2>June rhythm</h2></div><a href="#calendar" class="link-button">Full calendar <span>↗</span></a></section>
+      <section class="calendar-card card reveal delay-one" id="calendar">
+        <div class="calendar-header"><button class="calendar-arrow" type="button" aria-label="Previous month">←</button><div class="month-title"><strong>June 2024</strong><span>Cycle day 18 today</span></div><button class="calendar-arrow" type="button" aria-label="Next month">→</button></div>
+        <div class="weekday-row"><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span></div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+        <div class="calendar-legend"><span><i class="legend-dot period"></i>Next period</span><span><i class="legend-dot today"></i>Today</span></div>
+      </section>
+
+      <section class="bottom-grid" id="insights">
+        <article class="insight-card card reveal delay-two"><div class="insight-art"><span class="art-star star-one">✦</span><span class="art-star star-two">·</span><span class="art-moon">◑</span><span class="art-spark">✧</span></div><div><p class="eyebrow">A LITTLE INSIGHT</p><h3>Your energy may be rising</h3><p>Many people feel more social and energized around this part of their cycle.</p><button class="text-button" type="button">Explore insights <span>↗</span></button></div></article>
+        <article class="log-card card reveal delay-three"><div class="card-heading"><div><p class="eyebrow">QUICK LOG</p><h2>How's your flow?</h2></div><span class="log-icon">♧</span></div><div class="flow-options" role="group" aria-label="Log flow"><button type="button" data-flow="Light"><i class="flow-mark light"></i>Light</button><button type="button" data-flow="Medium"><i class="flow-mark medium"></i>Medium</button><button type="button" data-flow="Heavy"><i class="flow-mark heavy"></i>Heavy</button><button type="button" data-flow="Spotting"><i class="flow-mark spotting"></i>Spotting</button></div><p class="log-status" id="log-status">Nothing logged today</p><p class="flow-guidance" id="flow-guidance">Flow logging is for your predicted period days. You can still note symptoms anytime.</p></article>
+      </section>
+      <footer class="footer-note"><span>Made for your real, wonderful body.</span><span>Data stays on your device · <button type="button" id="privacy-link">Privacy</button></span></footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="settings-modal" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-title"><button class="modal-close" type="button" id="close-settings" aria-label="Close settings">×</button><span class="modal-orb">☾</span><p class="eyebrow">YOUR FIRST CHECK-IN</p><h2 id="settings-title">Make Rythora yours</h2><p class="modal-copy">Add your cycle details once. We’ll use them to make your predictions personal. You can edit them anytime.</p><label class="field-label" for="name-input">Your name</label><input class="modal-input" id="name-input" type="text" value="Alex" maxlength="24" /><label class="field-label" for="age-input">Your age</label><input class="modal-input" id="age-input" type="number" min="13" max="100" /><label class="field-label" for="last-period-input">When did your last period start?</label><input class="modal-input" id="last-period-input" type="date" /><label class="field-label" for="cycle-length-input">How long is your cycle? (days)</label><input class="modal-input" id="cycle-length-input" type="number" min="15" max="60" value="28" /><label class="field-label" for="period-length-input">How many days do you bleed?</label><input class="modal-input" id="period-length-input" type="number" min="1" max="14" value="5" /><div class="late-checkin" id="late-checkin"><strong>Your period has not arrived yet.</strong><span>What feels most relevant today?</span><div class="delay-options"><button type="button" data-delay-reason="No changes">No changes</button><button type="button" data-delay-reason="Stress or sleep changes">Stress or sleep changes</button><button type="button" data-delay-reason="Pregnancy is possible">Pregnancy is possible</button><button type="button" data-delay-reason="Not sure">Not sure</button></div><small>This is not a diagnosis. A healthcare professional can help if you are worried.</small></div><label class="toggle-row"><span><strong>Gentle reminders</strong><small>Daily check-in at 9:00 AM</small></span><input id="reminder-toggle" type="checkbox" checked /><span class="toggle-ui"></span></label><button class="save-note modal-save" type="button" id="save-settings">Save my details <span>→</span></button><button class="logout-button" type="button" id="logout-button">Sign out of this device</button></div></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

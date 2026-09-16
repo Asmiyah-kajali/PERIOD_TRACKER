@@ -1,0 +1,7 @@
+node_modules/
+rythora.db
+rythora.db-shm
+rythora.db-wal
+server-out.log
+server-err.log
+.env
